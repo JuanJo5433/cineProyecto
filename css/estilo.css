@@ -1,0 +1,249 @@
+/* Configuración básica para el cuerpo del documento */
+body {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    overflow: hidden; /* Oculta el contenido que se desborde del cuerpo */
+}
+
+/* Configuración global para todos los elementos */
+* {
+    transition: 300ms; /* Agrega una transición de 300 milisegundos a todas las propiedades animables */
+    margin: 0; /* Elimina los márgenes predeterminados para todos los elementos */
+    padding: 0; /* Elimina los rellenos predeterminados para todos los elementos */
+    font-family: 'Arimo', Arial, sans-serif; /* Define la fuente predeterminada para todos los elementos */
+}
+
+/* Estilo para listas desordenadas */
+ul {
+    list-style: none; /* Elimina los marcadores de lista predeterminados */
+}
+
+/* Estilo para enlaces */
+a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+}
+
+/* Estilo para enlaces al pasar el ratón por encima */
+a:hover {
+    color: #6ABCEA; /* Cambia el color del texto al pasar el ratón por encima del enlace */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    position: relative; /* Define la posición relativa para poder posicionar otros elementos en relación con este contenedor */
+    width: 100%; /* Establece el ancho del contenedor al 100% del ancho disponible */
+    height: 100vh; /* Establece la altura del contenedor al 100% del alto disponible (viewport height) */
+}
+
+/* Estilo para el video de la portada */
+.main-cover {
+    position: absolute; /* Permite posicionar el video de forma absoluta en relación con el contenedor principal */
+    top: 0; /* Coloca el video en la parte superior del contenedor */
+    left: 0; /* Coloca el video en la parte izquierda del contenedor */
+    width: 100%; /* Establece el ancho del video al 100% del contenedor */
+    height: 100%; /* Establece la altura del video al 100% del contenedor */
+    z-index: -1; /* Coloca el video detrás de otros elementos, como el contenido */
+}
+
+/* Estilo para el video en sí */
+#video {
+    width: 100%; /* Establece el ancho del video al 100% del contenedor */
+    height: 100vh; /* Establece la altura del video al 100% del alto disponible (viewport height) */
+    object-fit: cover; /* Escala el video para que cubra todo el contenedor manteniendo la relación de aspecto */
+}
+
+/* Estilo para la barra de navegación */
+.nav {
+    display: flex; /* Muestra los elementos de la barra de navegación en una fila */
+    justify-content: space-between; /* Distribuye los elementos de la barra de navegación con espacio entre ellos */
+    align-items: center; /* Centra verticalmente los elementos de la barra de navegación */
+    background-color: #010313; /* Establece el color de fondo de la barra de navegación */
+    /* position: fixed; */ /* Comentado: esto fijaría la barra de navegación en la parte superior de la ventana mientras se desplaza, quítalo si no es necesario */
+    top: 0; /* Coloca la barra de navegación en la parte superior del contenedor */
+    left: 0; /* Coloca la barra de navegación en la parte izquierda del contenedor */
+    width: 100%; /* Establece el ancho de la barra de navegación al 100% del contenedor */
+    z-index: 999; /* Establece una alta capa z-index para asegurarse de que la barra de navegación esté por encima de otros elementos */
+    transition: all 0.3s ease; /* Agrega una transición suave a todas las propiedades con una duración de 0.3 segundos */
+}
+
+/* Estilo para el logo en la barra de navegación */
+.logo a {
+    font-size: 34px; /* Establece el tamaño de fuente del logo */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    color: #fff; /* Establece el color del texto del logo a blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace del logo */
+    margin-left: 20px; /* Establece un margen a la izquierda del logo */
+}
+
+/* Estilo para el icono de menú desplegable en dispositivos móviles */
+.menu-icon {
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por el icono */
+    display: none; /* Inicialmente oculta el icono de menú en pantallas más grandes */
+}
+
+/* Estilo para las barras del icono de menú desplegable */
+.menu-icon .nav-icon {
+    width: 25px; /* Establece el ancho de cada barra del icono */
+    height: 3px; /* Establece la altura de cada barra del icono */
+    background-color: #fff; /* Establece el color de las barras del icono */
+    transition: all 0.2s ease-in-out; /* Agrega una transición suave a las barras con una duración de 0.2 segundos */
+    left: 200px; /* Posición inicial fuera del icono de menú */
+}
+
+/* Estilo para el menú de navegación */
+.menu {
+    display: flex; /* Muestra los elementos del menú en una fila */
+    justify-content: flex-end; /* Coloca los elementos del menú en el extremo derecho */
+    margin-right: 40px; /* Establece un margen a la derecha del menú */
+}
+
+/* Estilo para cada ítem del menú */
+.menu li {
+    list-style: none; /* Elimina los marcadores de lista para los ítems del menú */
+    padding: 0 20px; /* Establece un relleno a la izquierda y derecha de cada ítem del menú */
+}
+
+/* Estilo para los enlaces del menú */
+.menu li a {
+    color: #fff; /* Establece el color del texto del enlace del menú a blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace del menú */
+    position: relative; /* Permite posicionar el pseudo-elemento ::after */
+    top: 13px; /* Desplaza el enlace hacia abajo para centrarlo verticalmente con las barras del icono en dispositivos móviles */
+}
+
+/* Estilo para la línea de resaltado que aparece al pasar el ratón por encima del enlace */
+.menu li a::after {
+    content: ''; /* Agrega un contenido vacío al pseudo-elemento ::after */
+    display: block; /* Convierte el pseudo-elemento en un bloque para que ocupe todo el ancho del enlace */
+    height: 2px; /* Establece la altura de la línea de resaltado */
+    width: 0; /* Inicialmente, la línea de resaltado no tiene ancho */
+    background-color: #6ABCEA; /* Establece el color de la línea de resaltado */
+    transition: width 0.2s ease; /* Agrega una transición suave al ancho de la línea de resaltado con una duración de 0.2 segundos */
+}
+
+/* Estilo para la línea de resaltado que se muestra al pasar el ratón por encima del enlace */
+.menu li a:hover::after {
+    width: 100%; /* Cuando se pasa el ratón por encima del enlace, la línea de resaltado ocupa todo el ancho del enlace */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.login-button {
+    display: inline-block; /* Muestra el botón como un bloque en línea */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    font-size: 18px; /* Establece el tamaño de fuente del botón */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    text-align: center; /* Centra el texto en el botón */
+    text-decoration: none; /* Elimina el subrayado del botón */
+    color: #ffffff; /* Establece el color del texto del botón a blanco */
+    background-color: #0076ff; /* Establece el color de fondo del botón */
+    border-radius: 5px; /* Establece la curvatura de los bordes del botón */
+    border: none; /* Elimina el borde del botón */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del botón con una duración de 0.3 segundos */
+}
+
+/* Estilo para el botón de inicio de sesión al pasar el ratón por encima */
+.login-button:hover {
+    background-color: #45A7D7; /* Cambia el color de fondo del botón al pasar el ratón por encima */
+    color: #151838; /* Cambia el color del texto del botón al pasar el ratón por encima */
+}
+
+/* Media query para pantallas pequeñas, como dispositivos móviles con un ancho máximo de 768px */
+@media (max-width: 768px) {
+    /* Oculta el menú en pantallas pequeñas */
+    .menu {
+        display: none;
+    }
+
+    /* Muestra el icono de menú desplegable en pantallas pequeñas */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Muestra el menú desplegable al activarlo */
+    .menu.active {
+        display: flex; /* Muestra los elementos del menú en una columna cuando el menú está activo */
+        flex-direction: column; /* Coloca los elementos del menú en una columna cuando el menú está activo */
+        position: absolute; /* Permite posicionar el menú desplegable */
+        top: 50px; /* Posición vertical del menú desplegable desde la parte superior */
+        right: 0; /* Posición horizontal del menú desplegable desde la derecha */
+        width: 200px; /* Ancho del menú desplegable */
+        background-color: #333; /* Color de fondo del menú desplegable */
+        z-index: 998; /* Capa z-index para asegurarse de que el menú desplegable esté por encima de otros elementos */
+    }
+
+    /* Estilo para cada ítem del menú desplegable */
+    .menu.active li {
+        padding: 15px 20px; /* Establece el relleno a la izquierda y derecha de cada ítem del menú desplegable */
+        border-bottom: 1px solid #555; /* Agrega una línea de separación entre los ítems del menú desplegable */
+    }
+
+    /* Animación del ícono de tres rayas al abrir el menú desplegable */
+    .menu-icon.active .nav-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px); /* Rota la primera barra 45 grados en sentido contrario a las agujas del reloj y la desplaza */
+    }
+
+    .menu-icon.active .nav-icon:nth-child(2) {
+        opacity: 0; /* Oculta la segunda barra del icono al abrir el menú desplegable */
+    }
+
+    .menu-icon.active .nav-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px); /* Rota la tercera barra 45 grados en sentido de las agujas del reloj y la desplaza */
+    }
+}
+
+/* Estilo para el contenido */
+.content {
+    padding: 20px; /* Establece el relleno del contenido */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho y alto del contenido */
+    position: relative; /* Permite posicionar otros elementos en relación con el contenido */
+    z-index: 1; /* Establece una capa z-index para asegurarse de que el contenido esté por encima del video */
+}
+
+/* Estilo para el pie de página */
+.footer {
+    background-color: #010313; /* Establece el color de fondo del pie de página */
+    color: #fff; /* Establece el color del texto del pie de página a blanco */
+    text-align: center; /* Centra el contenido del pie de página */
+    font-size: 14px; /* Establece el tamaño de fuente del pie de página */
+    position: fixed; /* Fija el pie de página en la parte inferior de la ventana */
+    bottom: 0; /* Coloca el pie de página en la parte inferior del contenedor */
+    left: 0; /* Coloca el pie de página en la parte izquierda del contenedor */
+    width: 100%; /* Establece el ancho del pie de página al 100% del contenedor */
+}
+
+/* Estilo para el texto "PELISMARK" con efecto glitch */
+.glitch-text {
+    position: absolute; /* Permite posicionar el texto de forma absoluta en relación con el contenedor */
+    top: 50%; /* Posición vertical del texto desde la parte superior del contenedor */
+    left: 50%; /* Posición horizontal del texto desde la izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente en el contenedor */
+    font-size: 4rem; /* Establece el tamaño de fuente del texto */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    color: #002fff; /* Establece el color del texto a azul */
+    opacity: 0.8; /* Establece la opacidad del texto */
+    animation: glitch 5s infinite; /* Agrega la animación de glitch al texto con una duración de 5 segundos y en bucle infinito */
+}
+
+/* Animación de glitch para el texto */
+@keyframes glitch {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0); /* Establece la posición inicial del texto */
+        opacity: 0.8; /* Establece la opacidad inicial del texto */
+    }
+    25% {
+        transform: translate(-50%, -50%) translateX(-5px) translateY(5px) translateZ(0); /* Desplaza el texto hacia la izquierda y hacia abajo */
+        opacity: 0.6; /* Cambia la opacidad del texto */
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(5px) translateY(-5px) translateZ(0); /* Desplaza el texto hacia la derecha y hacia arriba */
+        opacity: 0.7; /* Cambia la opacidad del texto */
+    }
+    75% {
+        transform: translate(-50%, -50%) translateX(-5px) translateY(5px) translateZ(0); /* Desplaza el texto hacia la izquierda y hacia abajo */
+        opacity: 0.5; /* Cambia la opacidad del texto */
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0); /* Vuelve a la posición inicial del texto */
+        opacity: 0.8; /* Establece la opacidad final del texto */
+    }
+}

@@ -1,0 +1,315 @@
+    @import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+
+    body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Arimo', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #ececec;
+       
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    
+    }
+
+    * {
+        transition: 300ms;
+        margin: 0;
+        padding: 0;
+        font-family: 'Arimo', Arial, sans-serif;
+        box-sizing: border-box;
+        color: #ffffff;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    
+    }
+
+    a:hover {
+        color: #6ABCEA;
+    }
+ 
+    /* NAVEGACION */
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #19087082;
+        color: #fff;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom:0 ;
+        width: 100%;
+        height: 60px;
+        z-index: 999;
+        transition: all 0.3s ease; /* Animación de transición */
+        
+    }
+
+
+    .logo a {
+        font-size: 34px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+       
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: none;
+        
+    }
+
+    .menu-icon .nav-icon {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: all 0.2s ease-in-out;
+        left: 200px;
+      
+    }
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 40px;
+    }
+
+    .menu li {
+        list-style: none;
+        padding: 0 20px;
+        
+    }
+
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+        position: relative; /* Agregamos posición relativa para los enlaces */
+        top: 13px;
+    }
+    .menu li a::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        background-color: #6ABCEA;
+        transition: width 0.2s ease; /* Animación de la línea */
+    }
+
+    .menu li a:hover::after {
+        width: 100%; /* La línea crecerá hasta cubrir el ancho del enlace */
+    }
+
+  
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0076ff;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #45A7D7;
+    color: #151838;
+}
+/* Media query para pantalla pequeña */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        background-color: #333;
+        z-index: 998;
+    }
+
+    .menu.active li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Animación del ícono de tres rayas al abrir el menú */
+    .menu-icon.active .nav-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.active .nav-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active .nav-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+.container{
+    height: 100%;
+    background-color: #000000; /* Cambiar el color de fondo a negro */
+}
+
+.movie-card {
+    background: #000000;
+    
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, .1);
+    width: 100%;
+    max-width: 315px;
+    
+    margin: 2em;
+    border-radius: 10px;
+    display: inline-block;
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px 2px rgba(4, 10, 63, 0.884);
+    cursor: pointer;
+    margin-top: 70px;
+
+}
+
+.movie-header {
+    height: 500px;
+    width: 100%;
+    
+    max-height: 415px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-icon-container {
+    position: relative;
+}
+
+.header-icon {
+    width: 100%;
+    height: 300px;
+    line-height: 367px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 54px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+    opacity: .85;
+}
+
+.header-icon:hover {
+    background: rgba(0, 0, 0, .15);
+    font-size: 74px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 1;
+    
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px 2px rgba(215, 215, 216, 0.884);
+    
+}
+
+.movie-content {
+    padding: 18px 18px 24px 18px;
+    margin: 0;
+}
+
+.movie-content-header,
+.movie-info {
+    display: table;
+    width: 100%;
+}
+
+.movie-title {
+    font-size: 24px;
+    margin: 0;
+    display: table-cell;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.modal-content {
+    background: rgb(7,5,70);
+background: linear-gradient(180deg, rgba(7,5,70,1) 4%, rgba(2,2,23,1) 50%, rgba(7,5,70,1) 100%);
+    margin: 10vh auto;
+    padding: 20px;
+    
+    width: 80%;
+    max-width: 600px; /* Limitar el ancho máximo del modal */
+    height: auto;
+    max-height: 1090vh; /* Limitar el alto máximo del modal */
+    overflow-y: auto; /* Habilitar el desplazamiento si el contenido es más largo que el modal */
+    overflow-x: auto;
+    
+}
+
+.modal-content video{
+    border: rgba(255, 255, 255, 0.37)  2px solid;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #010313;
+    color: #fff;
+    text-align: center;
+    height: 20px;
+    font-size: 14px;
+}

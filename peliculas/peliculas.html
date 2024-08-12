@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PELICULAS CINE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-d37QT0kW8DTW1Fv3fCaw45/k5GGq1caRo7IGBtELgj09Oq5K4DaaA4oywRs7vemqi29dSTb2BCnJeI2ErsLvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <meta name="author" content="Juan Jose Giraldo">
+    <link rel="icon" href="img/logo.png">
+
+</head>
+
+<body>
+
+
+    <!-- NAVEGACION -->
+    <div class="nav">
+        <div class="logo">
+            <a href="#">PELISMARK</a>
+        </div>
+        <div class="menu-icon">
+            <div class="nav-icon"></div>
+            <div class="nav-icon"></div>
+            <div class="nav-icon"></div>
+        </div>
+        <ul class="menu">
+            <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Películas</a></li>
+        
+                <li><a href="../estrenos/estrenos.html">Próximamente</a></li>
+                <a href="../login/indexlogin.html" class="login-button">Login</a>
+        </ul>
+        
+    </div>
+    <!--Header section-->
+    <div class="container">
+        <div class="movie-card" onclick="showMovieInfo('misionImposible')">
+            <div class="movie-header" style="background-image: url('img/mision_imposible.jpg');">
+            
+            </div>
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">Misión imposible: sentencia mortal - parte 1</h3>
+                    </a>
+                </div>
+                <div class="movie-info">
+                    <div class="info-section">
+                        <label>Fecha</label>
+                        <span>2023</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Duracion</label>
+                        <span>2h 43m</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Genero:</label>
+                        <span>Acción/Aventura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="movie-card" onclick="showMovieInfo('oppenheimer')">
+            <div class="movie-header" style="background-image: url('img/oppenheimer.jpg');">
+               
+            </div>
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">Oppenheimer</h3><br><br><br><br>
+                    </a>
+                </div>
+                <div class="movie-info">
+                    <div class="info-section">
+                        <label>Fecha</label>
+                        <span>2023</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Duración</label>
+                        <span>3 horas</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Género:</label>
+                        <span>Bélico/Drama</span>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
+        <div class="movie-card" onclick="showMovieInfo('barbie')">
+            <div class="movie-header" style="background-image: url('img/barbie.jpg');">
+                
+            </div>
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">Barbie</h3><br><br><br><br>
+                    </a>
+                </div>
+                <div class="movie-info">
+                    <div class="info-section">
+                        <label>Fecha</label>
+                        <span>2023</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Duración</label>
+                        <span>1h 54m</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Género:</label>
+                        <span>Comedia/Ficción</span>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
+        <div class="movie-card" onclick="showMovieInfo('theFlash')">
+            <div class="movie-header" style="background-image: url('img/the_flash.jpg');">
+                
+            </div>
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">The Flash</h3><br><br><br><br>
+                    </a>
+                </div>
+                <div class="movie-info">
+                    <div class="info-section">
+                        <label>Fecha</label>
+                        <span>2023</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Duración</label>
+                        <span>2h 24m</span>
+                    </div>
+                    <div class="info-section">
+                        <label>Género:</label>
+                        <span>Acción/Fantasía</span>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div><!--container-->
+
+    <div id="movieModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalInfo"></div>
+  
+        <div id="modalDescription"></div>
+        <div id="modalTrailer">
+            <!-- Utilizamos la etiqueta <video> para cargar los tráilers de las películas -->
+            <video width="560" height="315" controls id="videoPlayer" autoplay>
+                <!-- Aquí cargaremos el video con JavaScript -->
+            </video>
+        </div>
+    </div>
+</div>
+  
+    <script src="js/script.js"></script>
+    <footer class="footer">
+        Desarrollado por JuanJoseG - CopyRight - Año 2023
+      </footer>
+    
+</body>
+</html>
